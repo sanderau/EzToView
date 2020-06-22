@@ -1,0 +1,20 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+   
+        
+    <div class="text-center">
+        <h1 class="display-4">Welcome</h1>
+
+        
+        @using (Html.BeginForm("btnClick", "HomeController", FormMethod.Post))
+        {
+            <button type="submit" asp-area="" asp-controller="Upload" asp-action="Index">Upload File</button>
+        }
+
+    </div>
+
+ 
+
+    

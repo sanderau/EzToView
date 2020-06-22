@@ -1,0 +1,28 @@
+﻿@{ ViewData["Title"] = "Home Page"; }
+@model Upload
+
+
+
+@using (Html.BeginForm("UploadFile", "Upload", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+@Html.ValidationSummary();
+   
+    <div class="text-center">
+
+        <input type="text" id="email" name="email" placeholder="email" />
+        <p class="text-danger">@ViewBag.emailError</p>
+
+        <br />
+        <input type="file" id="file" name="file" />
+        <p class="text-danger">@ViewBag.fileError</p>
+
+        <br />
+        <span class="field-validation-error" id="spanfile"></span>
+
+        <input type="submit" id="btnSubmit" value="Upload" />
+
+    </div>
+       
+}
+
+
