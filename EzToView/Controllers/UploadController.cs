@@ -23,14 +23,10 @@ namespace EzToView.Controllers
     public class UploadController : Controller
     {
         // data needed to access the s3 bucket.
-
-
-        
-
         string _awsAccessKeyId = "";
-        private static readonly string _awsprofilename = "";
-        private static readonly string _awssecretkey = "";
-        private static readonly string _bucketname = "";
+        private static readonly string _awsprofilename = WebConfigurationManager.AppSettings["AWSAccessKey"];
+        private static readonly string _awssecretkey = WebConfigurationManager.AppSettings["AWSSecretKey"];
+        private static readonly string _bucketname = WebConfigurationManager.AppSettings["BucketName"];
         private static readonly RegionEndpoint _bucketRegion = RegionEndpoint.USWest2;
 
         
